@@ -29,17 +29,7 @@ public class Usuario {
     @Column(name = "data_nasc")
     private LocalDate dataNasc;
 
-    @Column(name = "foto")
-    private String foto;
 
-    @Column(name = "bio")
-    private String bio;
-
-    @Column(columnDefinition = "TEXT", name = "interesses")
-    private String interesses;
-
-    @Column(name = "privacidade")
-    private String privacidade;
 
 
 }

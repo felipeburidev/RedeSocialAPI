@@ -19,7 +19,7 @@ public class Postagem {
     @Column(name = "id")
     private Long id_postagem;
 
-    @Column(name = "coteudo")
+    @Column(name = "conteudo")
     private String conteudo;
     @Column(name = "tipo")
     private String tipo;
