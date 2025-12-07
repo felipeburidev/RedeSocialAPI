@@ -1,0 +1,403 @@
+{
+	"info": {
+		"name": "RedeSocialAPI_Atualizada",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/get",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios", "get"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/id/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios", "id", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios?nome=Ana",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios"],
+							"query": [{ "key": "nome", "value": "Ana" }]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Novo Usuario\",\n    \"email\": \"novo@email.com\",\n    \"senha\": \"123456\",\n    \"dataNasc\": \"2000-01-01\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/post",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios", "post"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\": 1,\n    \"nome\": \"Ana Silva Editada\",\n    \"email\": \"ana.silva@email.com\",\n    \"senha\": \"nova_senha\",\n    \"dataNasc\": \"1990-05-15\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/alter1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios", "alter1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/dell1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["usuarios", "dell1"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Postagem",
+			"item": [
+				{
+					"name": "Listar Todas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/posts",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["posts"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/posts/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["posts", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Postagem",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"conteudo\": \"Nova postagem via API\",\n    \"tipo\": \"texto\",\n    \"usuario\": {\n        \"idUsuario\": 1\n    }\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/posts/Post",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["posts", "Post"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Postagem",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPostagem\": 1,\n    \"conteudo\": \"Postagem editada\",\n    \"tipo\": \"texto\",\n    \"usuario\": {\n        \"idUsuario\": 1\n    }\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/posts/alter1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["posts", "alter1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Postagem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/posts/delete1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["posts", "delete1"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stories",
+			"item": [
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Stories/AllStories",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["Stories", "AllStories"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Stories/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["Stories", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Story",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"conteudo\": \"Minha foto de ferias\",\n    \"usuario\": {\n        \"idUsuario\": 1\n    }\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/Stories/post",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["Stories", "post"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Story",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Stories/DeletarStories1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["Stories", "DeletarStories1"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curtida",
+			"item": [
+				{
+					"name": "Listar Todas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/curtida",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["curtida"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Curtida",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\": { \"idUsuario\": 1 },\n    \"postagem\": { \"idPostagem\": 1 },\n    \"data_curtida\": \"2025-01-01\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/curtida",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["curtida"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Curtida",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/curtida/delete1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["curtida", "delete1"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentario",
+			"item": [
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comentarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["comentarios"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Comentario",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"conteudo\": \"Comentario Teste\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "http://localhost:8080/comentarios?idPostagem=1&idUsuario=1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["comentarios"],
+							"query": [
+								{ "key": "idPostagem", "value": "1" },
+								{ "key": "idUsuario", "value": "1" }
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Postagem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comentarios/postagem/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["comentarios", "postagem", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Comentario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comentarios/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["comentarios", "1"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
