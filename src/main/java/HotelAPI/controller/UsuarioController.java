@@ -3,6 +3,7 @@ package HotelAPI.controller;
 import HotelAPI.model.Usuario;
 import HotelAPI.repository.UsuarioRepository;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class UsuarioController {
 
     //Post
     @PostMapping("/post")
-    public Usuario save(@RequestBody Usuario usuario) {
+    public Usuario save(@Valid @RequestBody Usuario usuario) { // Adicione @Valid aqui
         return usuarioRepository.save(usuario);
     }
 
@@ -48,7 +49,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/alter{id}")
-    public Usuario update(@RequestBody Usuario usuario, @PathVariable int id) {
+    public Usuario update(@Valid @RequestBody Usuario usuario, @PathVariable int id) {
         return usuarioRepository.save(usuario);
     }
 
